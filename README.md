@@ -1,7 +1,7 @@
 # se01
 Assessment for SE01
 
-#Ex 4 theorycrafting:
+# Ex 4 theorycrafting:
 
 Creating a tree of all next possible moves, iterating through them, if there is no possible solution, then the game ends.
 
