@@ -15,6 +15,7 @@ beakers = {
 # print (beakers)
 
 def getTopLiquid(beaker):
+    beaker = beaker.copy()
     while beaker:
         topLiquid = beaker.pop()
         if topLiquid == 0:
@@ -25,6 +26,7 @@ def getTopLiquid(beaker):
     return "Its empty"
 
 def checkSpace(beaker):
+    beaker = beaker.copy()
     emptySpace = 0
     while beaker:
         topLiquid = beaker.pop()
@@ -35,7 +37,8 @@ def checkSpace(beaker):
     return emptySpace
 
 def getTopLiquidLength(beaker):
-    length = 1
+    beaker = beaker.copy()
+    length = 0
     color = getTopLiquid(beaker)
     while beaker:
         topLiquid = beaker.pop()
@@ -47,16 +50,27 @@ def getTopLiquidLength(beaker):
             break
     return length
 
-def checkMove():
-    source = input('Sourcebeaker: ')
-    target = input('Targetbeaker: ')
-    print (beakers[target])
+def checkMove(sourceselector, targetselector):
+
+    source = beakers[sourceselector]
+    target = beakers[targetselector]
+    
+    print (getTopLiquid(target))
+    print (getTopLiquid(source))
+
+    print (source)
+    print (target)
+
+    # print (getTopLiquid(source) == getTopLiquid(target))
+    print (checkSpace(target))
+    print (getTopLiquidLength(source))
+
 
     #TODO Exception upon not available
 
-    if (checkSpace(beakers[target]) >=  getTopLiquidLength(beakers[source])):
+    if (checkSpace(target) >=  getTopLiquidLength(source)):
         # Enough Space
-        if (getTopLiquid(beakers[source]) == getTopLiquid(beakers[target])):
+        if (getTopLiquid(source) == getTopLiquid(target)):
             print ("Legal")
             
         else: 
@@ -64,9 +78,11 @@ def checkMove():
     else:
         print ("Illegal no space")
 
-# checkMove()
+checkMove(sourceselector = input("Source: "), targetselector = input("Target: "))
 
-print (getTopLiquidLength([2, 1, 2]))
+# print (getTopLiquidLength([2, 1, 2])) 
+# source = input()
+
 
 # print (getTopLiquid([1,0,0]))
 # print (getTopLiquid([2,1,0]))
