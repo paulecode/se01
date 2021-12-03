@@ -11,6 +11,7 @@ For the winning condition, iterate through all beakers.
 
 Converting them to sets then removes duplicates (they are equal to each other) Then checking the length <= 1 should tell us whether they are all empty or equal.
 
+The loop probably doesn't work right now because I used `copy()`, and I probably won't find the source of this in the remaining time on top of fixing everything else
 # Note
 
 Exercise 3 contains an updated solution for exercise 2
