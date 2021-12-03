@@ -15,3 +15,10 @@ The loop probably doesn't work right now because I used `copy()`, and I probably
 # Note
 
 Exercise 3 contains an updated solution for exercise 2
+
+# General Approach
+
+Creating a dictionary, getting the top liquid by using `pop()`. 
+If `pop()` returns 0, which means free space, the loop will continue. Otherwise returning 0.
+
+To move one liquid into another beaker, I `reverse()` the target beaker, append the `pop()` of source, while appending 0 to it. Afterwards, removing [0] of target, and `reverse()` target at the end
